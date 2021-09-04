@@ -19,7 +19,7 @@ class Main extends PluginBase implements Listener {
 
     public function onJoin(PlayerJoinEvent $event){
         $this->sqlite->exec("CREATE TABLE IF NOT EXISTS played(id INTEGER PRIMARY KEY, name TEXT)");
-        $this->sqlite->exec("INSERT INTO played(name, joins) VALUES('{$event->getPlayer()->getName()}')");
+        $this->sqlite->exec("INSERT INTO played(name) VALUES('{$event->getPlayer()->getName()}')");
         $res = $this->sqlite->query('SELECT * FROM played');
         $event->getPlayer()->sendMessage("Your Name = {$res->fetchArray()["name"]}");
     }
