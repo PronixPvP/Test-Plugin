@@ -1,6 +1,6 @@
 <?php
 
-namespace poop drag kills;
+namespace DRAGKILLS;
 
 use pocketmine\event\Listener;
 use pocketmine\event\player\PlayerJoinEvent;
