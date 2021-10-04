@@ -12,7 +12,7 @@ class Main extends PluginBase implements Listener {
 
     public function onEnable()
     {
-        @mkdir($this->getDataFolder());
+        @mkdir($this->getDataFolder()); //use this cuz i dont implement plugin_data
         $this->getServer()->getPluginManager()->registerEvents($this, $this);
         $this->sqlite = new \SQLite3($this->getDataFolder() . "data.db");
     }
