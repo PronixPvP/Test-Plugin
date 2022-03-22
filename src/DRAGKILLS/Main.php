@@ -21,6 +21,6 @@ class Main extends PluginBase implements Listener {
         $this->sqlite->exec("CREATE TABLE IF NOT EXISTS players(id INTEGER PRIMARY KEY, name TEXT)");
         $this->sqlite->exec("INSERT INTO players(name) VALUES('{$event->getPlayer()->getName()}')");
         $res = $this->sqlite->query('SELECT * FROM players');
-        $event->getPlayer()->sendMessage("Your Name = {$res->fetchArray()["name"]}");
+        $event->getPlayer()->sendMessage("Your Name = {$res->fetchArray()['name']}");
     }
 }
